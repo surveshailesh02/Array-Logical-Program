@@ -145,3 +145,89 @@ function findSmallestNumber(arr) {
 }
 let arr12 = [4,7,3,6,9,2,8,5,1];
 console.log("Smallest number in the array:", findSmallestNumber(arr12));
+
+console.log(" Q.11 ========== WAP To Find Remove Duplicate Elements Array =================");
+
+function removeDuplicates(arr) {
+    let uniqueArray = [];
+    for (let index = 0; index < arr.length; index++) {
+        if (uniqueArray.indexOf(arr[index] == -1)) {
+            uniqueArray.push(arr[index]);
+        }
+    }
+    return uniqueArray
+}
+let arr13 = [4,6,7,3,4,9,5,3,8,2,6];
+console.log("Original array:",arr13);
+let uniqueArray = removeDuplicates(arr13);
+console.log("Array After Removing duplicates:",uniqueArray);
+
+console.log(" Q.12 ========== WAP To Find Odd & Even No Elements Array =================");
+
+function printEvenOddNumbers(arr) {
+    let oddNumbers = [];
+    let evenNumbers = [];
+    for (let index = 0; index < arr.length; index++) {
+     if (arr[index] % 2 == 0) {
+        evenNumbers.push(arr[index]);
+     } else{
+        oddNumbers.push(arr[index]);
+     }
+    }
+    console.log("Even Numbers:",evenNumbers);
+    console.log("Odd Numbers:",oddNumbers);
+}
+let arr14 = [4,6,2,5,81,9,37];
+console.log("Original Array:",arr14);
+console.log("Even And Odd Numbers Of An Array:");
+printEvenOddNumbers(arr14)
+
+console.log(" Q.13 ========== WAP To Find Copy All Elements From One Array into another Array =================");
+
+  console.log("======= Method : 1 ===========");
+  let arr15 = [1,2,3,4,5];
+  let newArr = [];
+  for (let index = 0; index < arr15.length; index++) {
+    newArr.push (arr15[index]);
+  }
+  console.log(newArr);
+  
+  console.log("======= Method : 2 ===========");
+  let arr16 = [1,2,3,4,5];
+  let newArr1 = arr16.slice();
+  console.log(newArr1);
+  
+  console.log("======= Method : 3 ===========")
+  let arr17 = [1,2,3,4,5];
+  let newArr2 = [...arr17];
+  console.log(newArr2);
+  
+  console.log(" Q.14 ========== WAP To Find The Frequency Of Each Element Array =================");
+
+  let arr18 = [1,2,2,3,3,3,4,4,4,4];
+  let Frequency = {};
+  for (let index = 0; index < arr18.length; index++) {
+    let element = arr18[index];
+    if (Frequency[element]) {
+        Frequency[element]++;
+    }else{
+        Frequency[element] = 1;
+    }
+  }
+  console.log(Frequency);
+  
+  console.log(" Q.15 ========== WAP To Left Rotated Element Array =================");
+
+  function LeftRotateArray(arr) {
+    if (arr.length == 0) {
+        return arr;   
+    }
+    let firstElement = arr.shift();
+    arr.push(firstElement);
+    return arr;
+  }
+  let arr19 = [1,2,3,4,5];
+  console.log("Original array:",arr19);
+  let rotatedArray1 = LeftRotateArray(arr19);
+  console.log("Array after left rotation:",rotatedArray1);
+  
