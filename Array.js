@@ -231,3 +231,125 @@ console.log(" Q.13 ========== WAP To Find Copy All Elements From One Array into 
   let rotatedArray1 = LeftRotateArray(arr19);
   console.log("Array after left rotation:",rotatedArray1);
   
+  console.log(" Q.16 ========== WAP To Print Duplicate Element Array =================");
+
+  console.log("============= Method 1 =================");
+
+  function findDuplicates(arr) {
+    const duplicates = [];
+    for (let index = 0; index < arr.length; index++) {
+        for (let j = index + 1; j < arr.length; j++) {
+            if (arr[index] == arr[j] && !duplicates.includes(arr[index])) {
+                duplicates.push(arr[index]);
+            }
+        }
+    }
+    return duplicates
+  }
+  const numbers = [2,4,8,5,6,3,2,4,6,6];
+  const duplicateNumbers = findDuplicates(numbers);
+  console.log("Duplicate numbers:",duplicateNumbers);
+
+  console.log("============= Method 2 =================");
+  
+  function findDuplicatesOptimized(array) {
+    const duplicates = [];
+    const frequencyMap = {};
+    for (let index = 0; index < array.length; index++) {
+        const elements = array[index];
+        if (frequencyMap[elements]) {
+            if (!duplicates.includes(elements)) {
+                duplicates.push(elements);
+            }
+            else{
+                frequencyMap[elements] = true ;    
+               }
+        }
+    }
+    return duplicates
+  }
+  const numbers1 = [2,4,8,5,6,3,2,4,6,6];
+  const duplicateNumbers1 = findDuplicatesOptimized(numbers1);
+  console.log("Duplicates Numbers:",duplicateNumbers1);
+  
+  console.log("============= Method 3 =================");
+
+  function printDuplicates(arr) {
+    let elementCount = {};
+    let duplicates = [];
+    for (let index = 0; index < arr.length; index++) {
+        const element = arr[index];
+        if (elementCount[element]) {
+            elementCount[element]++;
+        } else{
+            elementCount[element] = 1;
+        }
+    }
+    for (let element in elementCount) {
+        if (elementCount[element] > 1) {
+            duplicates.push(element);
+        }
+    }
+    if (duplicates.length > 0) {
+        console.log("Duplicate elements:",duplicates);
+    } else{
+        console.log("No Duplicates elements found");
+    }
+  }
+  let arr20 = [2,4,8,5,6,3,2,4,6,6];
+  printDuplicates(arr20)
+
+  console.log(" Q.17 ========== WAP To Print Element Of Array =================");
+
+    console.log("========== Method 1 ===  For Loop ===========");
+
+    console.log("Using For Loop:");
+    
+    function printArrayElements(arr) {
+        for (let index = 0; index < arr.length; index++) {
+               console.log(arr[index]);
+        }
+    }
+    let arr21 = [1,2,3,4,5];
+    printArrayElements(arr21);
+
+    console.log("========== Method 2 ===  While Loop ===========");
+
+    console.log("Using While Loop:");
+
+    function printArrayElementsWhile(arr) {
+        let index = 0;
+       while (index < arr.length) {
+        console.log(arr[index]);
+         index ++ ;
+       };
+    }
+    let arr22 = [1,2,3,4,5];
+    printArrayElementsWhile(arr22);
+    
+    console.log("========== Method 3 ===  Do While Loop ===========");
+
+    console.log("Using Do While Loop:");
+
+    function printArrayElementsDoWhile(arr) {
+        let index = 0
+        do {
+            console.log(arr[index]);
+            index ++ ;
+        } while (index < arr.length);
+    };
+    let arr23 = [1,2,3,4,5];
+    printArrayElementsDoWhile(arr23);
+
+    console.log("========== Method 4 ===  For Each Loop ===========");
+
+    console.log("Using For Each Loop:");
+
+    function printArrayElementsForEach(arr) {
+        arr.forEach(function (element) {
+            console.log(element);
+        });
+    }
+    let arr24 = [1,2,3,4,5];
+    printArrayElementsForEach(arr24);
+
