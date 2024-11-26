@@ -353,3 +353,81 @@ console.log(" Q.13 ========== WAP To Find Copy All Elements From One Array into 
     let arr24 = [1,2,3,4,5];
     printArrayElementsForEach(arr24);
 
+
+    console.log(" Q.18 ========== WAP To Print Reverse Element Of Array =================");
+
+    console.log("========== Method 1 ===  While Loop ===========");
+
+    console.log("Using While Loop:");
+
+    function printArrayElementsReverseWhile(arr) {
+        let i = arr.length-1;
+        while (i >= 0) {
+            console.log(arr[i]);
+            i--;
+        }
+    }
+    let arr25 = [1,2,3,4,5];
+    printArrayElementsReverseWhile(arr25);
+
+    
+    console.log("========== Method 2 ===  Do While Loop ===========");
+
+    console.log("Using Do While Loop:");
+
+    function printArrayElementsReverseDoWhile(arr) {
+        let index = arr.length-1;
+        if (index < 0) return;
+        do {
+            console.log(arr[index]);
+            index--;
+        } while (index >= 0);
+    }
+    let arr26 = [1,2,3,4,5];
+    printArrayElementsReverseDoWhile(arr26);
+
+
+    console.log("========== Method 3 ===  For Loop ===========");
+
+    console.log("Using For Loop:");
+
+    function printArrayElementsReverseForLoop(arr) {
+        for (let index = arr.length-1; index>=0 ; index--) {
+             console.log(arr[index]);
+            
+        }
+    }
+    let arr27 = [1,2,3,4,5];
+    printArrayElementsReverseForLoop(arr27);    
+
+    console.log("========== Method 4 ===  For Each Loop ===========");
+
+    console.log("Using ForEach Loop:");
+
+    function printArrayElementsReverseForEach(arr) {
+        arr.slice().reverse().forEach(element => {
+            console.log(element);
+        });
+    }
+    let arr28 = [1,2,3,4,5];
+    printArrayElementsReverseForEach(arr28)
+
+    console.log(" Q.19 ========== WAP To Print Element Of Array Even Position =================");
+
+    function printElementsAtEvenPosition(arr) {
+        for (let index = 1; index < arr.length; index=index+2) {
+            console.log(arr[index]);
+        }
+    }
+    let arr29 = [1,6,3,9,4,2,6,3,9,22,43];
+    printElementsAtEvenPosition(arr29)
+
+    console.log(" Q.20 ========== WAP To Print Element Of Array Odd Position =================");
+
+    function printElementsAtOddPosition(arr) {
+        for (let index = 0; index < arr.length; index=index+2) {
+           console.log(arr[index]);
+        }
+    }
+    let arr30 = [1,6,3,9,4,2,6,3,9,22,43];
+    printElementsAtOddPosition(arr30)
